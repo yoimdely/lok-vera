@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ЛОК VERA Landing
 
-## Getting Started
+Лендинг проекта «ЛОК VERA» на Next.js (App Router).
 
-First, run the development server:
+## Локальный запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Домен и SEO
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Главный домен задается в `src/app/lib/site.ts`:
 
-## Learn More
+- `domain`: `вера-лок.рф`
+- `url`: `https://вера-лок.рф`
 
-To learn more about Next.js, take a look at the following resources:
+Используется в:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `canonical` и `alternates`
+- Open Graph / Twitter
+- `robots.txt` (`Host`, `Sitemap`)
+- `sitemap.xml`
+- JSON-LD schema
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Подключенные верификации и аналитика
 
-## Deploy on Vercel
+В `src/app/layout.tsx` подключены:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Yandex Webmaster: `yandex-verification`
+- Google Search Console: `google-site-verification`
+- Яндекс.Метрика (`id=106874983` + `noscript`-пиксель)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Отправка заявок в Telegram
+
+Все формы на сайте отправляют заявку в `POST /api/lead`, а API-роут пересылает заявку в Telegram.
+
+Нужные переменные:
+
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
+
+### Для локальной разработки
+
+Создайте `.env.local`:
+
+```bash
+TELEGRAM_BOT_TOKEN=...
+TELEGRAM_CHAT_ID=...
+```
+
+## Деплой на Render через GitHub
+
+На Render нужно создавать именно **Web Service** (не Static Site), потому что используется серверный маршрут `POST /api/lead`.
+
+1. Подключите репозиторий GitHub в Render.
+2. Создайте сервис типа `Web Service`.
+3. Укажите команды:
+
+```bash
+Build Command: npm ci && npm run build
+Start Command: npm run start
+```
+
+4. Добавьте переменные окружения в Render:
+
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
+
+5. Нажмите Deploy.
+
+Файл `render.yaml` в корне проекта можно использовать для Blueprint-деплоя без ручного ввода команд.
