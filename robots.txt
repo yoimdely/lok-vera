@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Host: вера-лок.рф
+Sitemap: https://вера-лок.рф/sitemap.xml

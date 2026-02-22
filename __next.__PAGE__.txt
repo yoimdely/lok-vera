@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:"$Sreact.suspense"
+3:I[9203,["152","static/chunks/152-8608c48b03b99ee6.js","974","static/chunks/app/page-4ea89fc43a6513cb.js"],"default"]
+4:I[484,[],"OutletBoundary"]
+0:{"buildId":"j9LQiamzr96Smtfo-y755","rsc":["$","$1","c",{"children":[["$","$2",null,{"fallback":["$","div",null,{"className":"min-h-screen bg-[color:var(--bg-0)] text-white","children":["$","div",null,{"className":"lux-container flex min-h-screen items-center justify-center","children":["$","div",null,{"className":"glass-panel","children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.2em] text-white/60","children":"ЛОК VERA"}],["$","p",null,{"className":"mt-2 text-lg font-semibold text-white","children":"Загрузка страницы..."}]]}]}]}],"children":["$","$L3",null,{}]}],null,["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://вера-лок.рф</loc>
+<xhtml:link rel="alternate" hreflang="ru-RU" href="https://вера-лок.рф" />
+<image:image>
+<image:loc>https://вера-лок.рф/images/facade-day.jpg</image:loc>
+</image:image>
+<image:image>
+<image:loc>https://вера-лок.рф/images/night-facade.jpg</image:loc>
+</image:image>
+<image:image>
+<image:loc>https://вера-лок.рф/images/resort-pool.jpg</image:loc>
+</image:image>
+<lastmod>2026-02-16T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+</urlset>
